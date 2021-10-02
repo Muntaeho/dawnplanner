@@ -39,6 +39,7 @@ public class UserInfo implements UserDetails {
         this.auth = auth;
     }
 
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // 사용자 권한에 대한 등록을 위해 HashSet형태의 roles 초기화
         Set<GrantedAuthority> roles = new HashSet<>();
