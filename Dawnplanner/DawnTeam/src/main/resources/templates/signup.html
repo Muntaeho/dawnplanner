@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+  </head>
+  <body>
+    <h1>Sign Up</h1> <hr>
+
+
+    <a href="/login">Go to login →</a>
+    <form th:action="@{/signup}" method="POST">
+      email : <input type="text" id = "email" name="email"> <br>
+      password : <input type="password" id="password" name="password"> <br>
+      name : <input type="text" id="name" name="name" > <br>
+      nickname:  <input type="text" id="nickname" name="nickname">
+      phone_number : <input type="text" id="phone_number" name="phone_number"> <br>
+      gender : <select type="text" name="gender" placeholder="성별">
+      <option>-- 선택 --</option>
+      <option>남성</option>
+      <option>여성</option>
+    </select> <br>
+      age : <input type="text" id="age" name="age" >  <br>
+    <br>
+      <button type="submit">Join</button>
+    </form> <br>
+
+  </body>
+</html>
