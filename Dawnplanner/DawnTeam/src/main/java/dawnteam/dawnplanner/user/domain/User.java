@@ -20,7 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Getter
-public class UserInfo implements UserDetails {
+public class User implements UserDetails {
 
     @Id
     @Column(name = "id")
@@ -40,14 +40,14 @@ public class UserInfo implements UserDetails {
     private String gender;
     @Column(name = "age")
     private int age;
-    @Column(name = "auth")
-    private String auth;
+    @Column(name = "role")
+    private String role;
 
     @Builder
-    public UserInfo(Long id, String email, String password,
-                    String name, String nickname,
-                    String phone_number, String gender,
-                    int age, String auth) {
+    public User(Long id, String email, String password,
+                String name, String nickname,
+                String phone_number, String gender,
+                int age, String role) {
         this.email = email;
         this.password = password;
         this.name = name;
@@ -55,7 +55,13 @@ public class UserInfo implements UserDetails {
         this.phone_number = phone_number;
         this.gender = gender;
         this.age = age;
-        this.auth = auth;
+        this.role = role;
+    }
+
+    public void update(String password, String nickname, String phone_number){
+        this.password = password;
+        this.nickname = nickname;
+        this.phone_number = phone_number;
     }
 
     // 사용자의 권한을 콜렉션 형태로 반환
@@ -63,11 +69,9 @@ public class UserInfo implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> roles = new HashSet<>();
-
-        for (String role : auth.split(",")) {
+        for (String role : role.split(",")) {
             roles.add(new SimpleGrantedAuthority(role));
         }
-
         return roles;
     }
 

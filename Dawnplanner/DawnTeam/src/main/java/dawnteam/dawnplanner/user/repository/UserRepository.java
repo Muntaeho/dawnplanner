@@ -1,11 +1,12 @@
 package dawnteam.dawnplanner.user.repository;
 
 
-import dawnteam.dawnplanner.user.domain.UserInfo;
+import dawnteam.dawnplanner.user.domain.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends CrudRepository<UserInfo, Long> {
-    Optional<UserInfo> findByEmail(String email);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findUserByEmail(String email);
 }
