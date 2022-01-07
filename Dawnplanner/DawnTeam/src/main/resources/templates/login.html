@@ -27,7 +27,7 @@
   <body class="text-center">
     <main class="form-signin">
       <form action="/loginForm" method="POST">
-        <img class="mb-4" src="./images/dawnPlanner-logo.png" alt="" width="140" height="87"/>
+        <img class="mb-4" src="./images/dawnPlanner-logo.png" alt="" width="140" height="87">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
         <div class="form-floating">
           <input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
@@ -47,11 +47,11 @@
         </div>
         <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign in</button>
 
-        <div th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
+        <div class="mb-3" th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
           <span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
         </div>
-        <a href="/signup"><button class="btn btn-info fw-bold">Go to join! →</button></a>
       </form>
+      <a href="/signup"><button class="btn btn-info fw-bold">Go to join! →</button></a>
     </main>
   </body>
 </html>
