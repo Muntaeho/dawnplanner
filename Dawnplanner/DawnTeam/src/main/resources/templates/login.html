@@ -15,45 +15,6 @@
         -moz-user-select: none;
         user-select: none;
       }
-<<<<<<< HEAD
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <link href="./css/signin.css" rel="stylesheet">
-  </head>
-  <body class="text-center">
-    <main class="form-signin">
-      <form action="/loginForm" method="POST">
-        <img class="mb-4" src="./images/dawnPlanner-logo.png" alt="" width="140" height="87">
-        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-        <div class="form-floating">
-          <input class="form-control" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-        </div>
-        <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="username">
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
-          <label for="floatingInput">Password</label>
-        </div>
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary mb-3" type="submit">Sign in</button>
-
-        <div class="mb-3" th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
-          <span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
-        </div>
-      </form>
-=======
-
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -89,8 +50,6 @@
           <span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
         </div>
       </form>
-
->>>>>>> 0d9a2c29dce5c54e7d519ce848ed739b90560157
       <a href="/signup"><button class="btn btn-info fw-bold">Go to join! →</button></a>
     </main>
   </body>
