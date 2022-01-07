@@ -20,7 +20,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) { // static 하위 파일 목록(css, js, img) 인증 무시
-        web.ignoring().antMatchers("/css/**", "/js/**", "/images/**", "/h2-console/**, /error");
+        web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/h2-console/**, /error");
     }
 
     @Override
