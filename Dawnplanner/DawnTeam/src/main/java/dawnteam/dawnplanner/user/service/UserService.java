@@ -5,6 +5,7 @@ import dawnteam.dawnplanner.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import dawnteam.dawnplanner.user.domain.User;
 import dawnteam.dawnplanner.user.dto.UserDTO;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
