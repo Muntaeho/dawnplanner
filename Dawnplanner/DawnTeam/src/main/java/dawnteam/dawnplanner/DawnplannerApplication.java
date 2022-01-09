@@ -1,4 +1,4 @@
-package dawnteam.dawnplanner.user;
+package dawnteam.dawnplanner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
