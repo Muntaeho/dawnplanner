@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 @EnableWebSecurity // Security 사용
 @RequiredArgsConstructor
@@ -17,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
 
     private final UserService userService;
+    private final AuthenticationFailureHandler CustomFailureHandler;
 
     @Override
     public void configure(WebSecurity web) { // static 하위 파일 목록(css, js, img) 인증 무시
@@ -35,6 +37,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .formLogin() // 로그인에 관한 설정
                 .loginPage("/login") // 로그인 페이지 링크
                 .loginProcessingUrl("/loginForm")
+                .failureHandler(CustomFailureHandler)
                 .defaultSuccessUrl("/") // 로그인 성공 후 리다이렉트 주소
             .and()
                 .logout() // 로그아웃
