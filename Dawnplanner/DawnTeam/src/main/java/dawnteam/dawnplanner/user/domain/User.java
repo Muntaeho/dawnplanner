@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,7 +25,7 @@ public class User implements UserDetails {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "email", unique = true)
     private String email;
@@ -58,7 +59,7 @@ public class User implements UserDetails {
         this.role = role;
     }
 
-    public void update(String password, String nickname, String phone_number){
+    public void update(String password, String nickname, String phone_number) {
         this.password = password;
         this.nickname = nickname;
         this.phone_number = phone_number;

@@ -16,7 +16,7 @@ public class BoardController { // 보드 컨트롤러
     private BoardService boardService;
 
     @GetMapping(value = "/list")
-    public String list(@PageableDefault Pageable pageable, Model model){
+    public String list(@PageableDefault Pageable pageable, Model model) {
         model.addAttribute("boardList", boardService.showBoardList(pageable));
         return "/board/list";
     }

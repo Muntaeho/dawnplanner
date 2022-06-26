@@ -16,7 +16,7 @@ public class Boards { // implements Serializable
     @GeneratedValue(strategy = GenerationType.SEQUENCE) // 자동생성시 시퀀스 할당
     private Long id; /* 게시물 ID */
 
-    @Column(name ="board_id", nullable = false, unique = true)
+    @Column(name = "board_id", nullable = false, unique = true)
     private Long boardId;
 
     @Column(length = 400, nullable = false)

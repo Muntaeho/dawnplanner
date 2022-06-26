@@ -31,7 +31,7 @@ public class Cards {
     @JoinColumn(name = "board_id", referencedColumnName = "board_id")
     private Boards board; // Boards 객체
 
-    public Cards(Long cardId, String cardTitle, String cardDescription, Character cardStatus){
+    public Cards(Long cardId, String cardTitle, String cardDescription, Character cardStatus) {
         this.cardId = cardId;
         this.cardTitle = cardTitle;
         this.cardDescription = cardDescription;
