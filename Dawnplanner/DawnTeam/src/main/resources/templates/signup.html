@@ -33,7 +33,7 @@
         <h2>회원가입</h2>
     </div>
 
-<form th:action="@{/signup}" method="POST">
+<form th:action="@{/signup}" method = "POST" modelAttribute = "infoDto">
         email : <input type="text" id="email" name="email"><br>
         <br>
         password : <input type="password" id="password" name="password"> <br>

@@ -3,6 +3,7 @@ package dawnteam.dawnplanner.user.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import lombok.RequiredArgsConstructor;
 import dawnteam.dawnplanner.user.dto.UserDTO;
 import dawnteam.dawnplanner.user.service.UserService;
@@ -25,7 +26,7 @@ public class LogController {
         model.addAttribute("error", error);
         model.addAttribute("exception", exception);
         return "login";
-}
+    }
 
 
     @GetMapping(value = "/logout")

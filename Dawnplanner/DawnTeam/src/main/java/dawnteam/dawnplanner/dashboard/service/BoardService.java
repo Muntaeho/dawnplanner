@@ -6,5 +6,6 @@ import org.springframework.data.domain.Pageable;
 
 public interface BoardService {
     Page<Boards> showBoardList(Pageable pageable);
+
     Boards findBoardsByIdx(Long idx);
 }
